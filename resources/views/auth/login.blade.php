@@ -1,4 +1,4 @@
-@extends('layouts.app')
+{{-- @extends('layouts.app')
 
 @section('content')
 <div class="container">
@@ -69,5 +69,21 @@
             </div>
         </div>
     </div>
+</div>
+@endsection --}}
+
+@extends('layouts.app')
+
+@section('content')
+<div class="container">
+    <h1>Login</h1>
+    <form action="{{ route('login') }}" method="POST">
+        @csrf
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email">
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password">
+        <button type="submit">Login</button>
+    </form>
 </div>
 @endsection

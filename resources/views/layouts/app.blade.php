@@ -1,4 +1,4 @@
-<!doctype html>
+{{-- <!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <meta charset="utf-8">
@@ -75,6 +75,35 @@
         <main class="py-4">
             @yield('content')
         </main>
+    </div>
+</body>
+</html> --}}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Construction Management</title>
+    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+</head>
+<body>
+    <nav>
+        <ul>
+            @guest
+                <li><a href="{{ route('login') }}">Login</a></li>
+                <li><a href="{{ route('register') }}">Register</a></li>
+            @else
+                <li><a href="{{ url('/home') }}">Dashboard</a></li>
+                <li>
+                    <form action="{{ route('logout') }}" method="POST">
+                        @csrf
+                        <button type="submit">Logout</button>
+                    </form>
+                </li>
+            @endguest
+        </ul>
+    </nav>
+    <div class="container">
+        @yield('content')
     </div>
 </body>
 </html>
