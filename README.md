@@ -90,17 +90,12 @@ Update the database credentials and other necessary configurations.
 
 Run migrations:
 
-bash
-Copy code
 php artisan migrate
 Seed the database (optional):
 
-bash
-Copy code
 php artisan db:seed
 Start the server:
 
-bash
-Copy code
+
 php artisan serve
 Visit http://localhost:8000 to see the application in action.
